@@ -355,7 +355,7 @@ function swap(dragged, target) {
 //Layout Changing Control
 var height, width, current_layout, last_layout, num_views;
 // num_views[layout_number] = number of views provided by that layout
-num_views = [1, 2, 3, 4, 5, 6, 4, 8];
+num_views = [1, 2, 3, 4, 5, 6, 4, 8, 2];
 
 // Fixes layout. Call this if window resized, etc.
 function fixLayout() {
@@ -640,4 +640,23 @@ function layout_7() {
   $("#view_"+order[7]).css('left', width*0.75);
 
   last_layout = current_layout;
+}
+
+function layout_8() {
+	current_layout = 8;
+	addRemoveViews(current_layout, last_layout);
+
+	height = $(".video_container").height();
+	width = $(".video_container").width()a;
+
+	$("#view_"+order[0]).width(width);
+	$("#view_"+order[0]).height(height*0.5);
+	$("#view_"+order[0]).css('top', 0);
+	$("#view_"+order[0]).css('left', 0);
+
+	$("#view_"+order[1]).width(width);
+	$("#view_"+order[1]).height(height*0.5);
+	$("#view_"+order[1]).css('top', height*0.5);
+	$("#view_"+order[1]).css('left', 0);
+	last_layout = current_layout;
 }
